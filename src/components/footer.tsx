@@ -14,25 +14,24 @@ export const Footer: React.FC = () => {
         { name: "Careers", href: "#" },
         { name: "Press", href: "#" }
       ]
-    },
-    {
-      title: "Services",
-      links: [
-        { name: "Consulting", href: "#" },
-        { name: "Design", href: "#" },
-        { name: "Implementation", href: "#" },
-        { name: "Maintenance", href: "#" }
-      ]
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "Blog", href: "#" },
-        { name: "Case Studies", href: "#" },
-        { name: "Guides", href: "#" },
-        { name: "FAQ", href: "#" }
-      ]
     }
+    // ,
+    // {
+    //   title: "Services",
+    //   links: [
+    //     { name: "Consulting", href: "#" },
+    //     { name: "Legal", href: "#" }
+    //   ]
+    // },
+    // {
+    //   title: "Resources",
+    //   links: [
+    //     { name: "Blog", href: "#" },
+    //     { name: "Case Studies", href: "#" },
+    //     { name: "Guides", href: "#" },
+    //     { name: "FAQ", href: "#" }
+    //   ]
+    // }
   ];
 
   return (

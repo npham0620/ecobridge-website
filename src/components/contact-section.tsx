@@ -177,7 +177,7 @@ export const ContactSection: React.FC = () => {
           
           <Divider className="my-8" />
           
-          <div>
+          {/* <div>
             <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
             <div className="flex gap-4">
               <Button isIconOnly variant="flat" color="default" aria-label="Facebook" className="bg-default-100">
@@ -206,7 +206,7 @@ export const ContactSection: React.FC = () => {
                 </div>
               </CardBody>
             </Card>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </div>
