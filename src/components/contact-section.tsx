@@ -41,20 +41,20 @@ export const ContactSection: React.FC = () => {
   };
 
   const contactInfo = [
-    {
-      icon: "lucide:map-pin",
-      title: "Address",
-      details: "123 Some Street, Some City, VN 12456"
-    },
+    // {
+    //   icon: "lucide:map-pin",
+    //   title: "Address",
+    //   details: "123 Some Street, Some City, VN 12456"
+    // },
     {
       icon: "lucide:phone",
       title: "Phone",
-      details: "+1 (123) 456-7890"
+      details: ["United States: +1 (656) 241-0093","Vietnam: +84 944 723 759"]
     },
     {
       icon: "lucide:mail",
       title: "Email",
-      details: "hello@ecobridge.com"
+      details: ["Contact@ecobridge.onmicrosoft.com"]
     }
   ];
 
@@ -168,7 +168,11 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-foreground mb-1">{item.title}</h4>
-                    <p className="text-foreground-500">{item.details}</p>
+                    {Array.isArray(item.details) ? (
+                      item.details.map((line, idx) => <div key={idx}>{line}</div>)
+                    ) : (
+                      <div>{item.details}</div>
+                    )}
                   </div>
                 </div>
               ))}
