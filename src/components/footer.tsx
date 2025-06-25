@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
                 width={32}
                 height={32}
                 alt="Ecobridge Logo"
-                src="src/assets/ecobridge-logo.png"
+                src="/ecobridge-logo.png"
               />
               <p className="font-semibold text-foreground ml-2 text-xl">Ecobridge</p>
             </div>
