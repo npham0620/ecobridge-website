@@ -15,7 +15,7 @@ export const HeroSection: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: `url("src/assets/hanoi-ho-hoan-kiem.jpg")`,
+          backgroundImage: `url("public/hanoi-ho-hoan-kiem.jpg")`,
           backgroundPosition: "center 30%"
         }}
       >
