@@ -6,19 +6,19 @@ import { motion } from "framer-motion";
 export const AboutSection: React.FC = () => {
   const features = [
     {
-      icon: "lucide:leaf",
-      title: "Sustainable Practices",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      icon: "lucide:star",
+      title: "Mission",
+      description: "We aim to simplify the legal boulders and minimize the cultural differences to help foster lasting relationships between our foreign and domestic partners."
+    },
+    {
+      icon: "lucide:eye",
+      title: "Vision",
+      description: "A green future for current youths."
     },
     {
       icon: "lucide:heart",
-      title: "Community Focus",
-      description: "Building strong relationships with local communities is at the core of our philosophy."
-    },
-    {
-      icon: "lucide:recycle",
-      title: "Renewable Resources",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      title: "Values",
+      description: "Integrity, Transparency, Collaboration, and Growth."
     }
   ];
 
@@ -55,7 +55,9 @@ export const AboutSection: React.FC = () => {
       >
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">About Us</h2>
         <p className="text-foreground-500 max-w-2xl mx-auto text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          We are a consulting firm specialized in facilitating business operations and partnerships in Vietnam. 
+          Our sole mission to help Vietnam economy grow sustainably, and we aim to achieve it by simplifying the 
+          complex legal and cultural systems in Vietnam for providers of sustainable solutions. 
         </p>
       </motion.div>
 
@@ -68,17 +70,15 @@ export const AboutSection: React.FC = () => {
         >
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Our Story</h3>
           <p className="text-foreground-600 mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua.
+            Vietnam is a fast-growing country, strategically located in a major economic area. 
+            With the Kra Canal in Thailand set to start construction in late of this year, 
+            we expect the country to become a new major economic trading hub at a similar level as Singapore.
           </p>
           <p className="text-foreground-600 mb-4">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
-            ex ea commodo consequat.
+            Therefore, we believe that there is a lot of opportunities for your growth here in this country.
           </p>
           <p className="text-foreground-600">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.
+            We hope that we were able to pique your interest in expanding your business in Vietnam, and we wish that we can assist you on that journey.
           </p>
         </motion.div>
         

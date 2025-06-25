@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardBody, Input, Textarea, Button, Divider } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { Form } from "react-router-dom";
 
 export const ContactSection: React.FC = () => {
   const [formState, setFormState] = React.useState({
@@ -24,37 +25,63 @@ export const ContactSection: React.FC = () => {
     setIsSubmitting(true);
     
     // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormState({
-        name: "",
-        email: "",
-        message: ""
+    setTimeout(async () => {
+      const formData = new FormData();
+      formData.append("access_key","4ee62c75-eba7-4289-a8d0-42a49d8dbcc2");
+      formData.append("name", formState.name);
+      formData.append("email", formState.email);
+      formData.append("message", formState.message);
+      formData.append("subject", "New Message from Website");
+      formData.append("from_name", "Website Contact Form");
+
+      try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
-      
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormState({
+          name: "",
+          email: "",
+          message: ""
+        });
+
       // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        alert("Submission failed. Please try again.");
+        console.error(result);
+      }
+      } catch (error) {
+        alert("An error occurred while submitting the form. Please try again.");
+        console.error("Error submitting form:", error);
+      } finally {
+        setIsSubmitting(false);
+      }
     }, 1500);
   };
 
   const contactInfo = [
-    {
-      icon: "lucide:map-pin",
-      title: "Address",
-      details: "123 Some Street, Some City, VN 12456"
-    },
+    // {
+    //   icon: "lucide:map-pin",
+    //   title: "Address",
+    //   details: "123 Some Street, Some City, VN 12456"
+    // },
     {
       icon: "lucide:phone",
       title: "Phone",
-      details: "+1 (123) 456-7890"
+      details: ["United States: +1 (656) 241-0093","Vietnam: +84 944 723 759"]
     },
     {
       icon: "lucide:mail",
       title: "Email",
-      details: "hello@ecobridge.com"
+      details: ["Contact@ecobridge.onmicrosoft.com"]
     }
   ];
 
@@ -168,7 +195,11 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-foreground mb-1">{item.title}</h4>
-                    <p className="text-foreground-500">{item.details}</p>
+                    {Array.isArray(item.details) ? (
+                      item.details.map((line, idx) => <div key={idx}>{line}</div>)
+                    ) : (
+                      <div>{item.details}</div>
+                    )}
                   </div>
                 </div>
               ))}

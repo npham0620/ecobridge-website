@@ -10,9 +10,9 @@ export const Footer: React.FC = () => {
       title: "Company",
       links: [
         { name: "About", href: "#about" },
-        { name: "Team", href: "#" },
-        { name: "Careers", href: "#" },
-        { name: "Press", href: "#" }
+        { name: "Team", href: "/team" },
+        { name: "Careers", href: "/careers" },
+        { name: "Press", href: "/press" }
       ]
     }
     // ,
@@ -49,10 +49,9 @@ export const Footer: React.FC = () => {
               <p className="font-semibold text-foreground ml-2 text-xl">Ecobridge</p>
             </div>
             <p className="text-foreground-500 mb-6 max-w-md">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua.
+              Let us be your bridge.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <Link href="#" aria-label="Facebook" className="text-foreground-400 hover:text-primary transition-colors">
                 <Icon icon="lucide:facebook" className="text-xl" />
               </Link>
@@ -65,7 +64,7 @@ export const Footer: React.FC = () => {
               <Link href="#" aria-label="LinkedIn" className="text-foreground-400 hover:text-primary transition-colors">
                 <Icon icon="lucide:linkedin" className="text-xl" />
               </Link>
-            </div>
+            </div> */}
           </div>
           
           {footerLinks.map((column, index) => (
