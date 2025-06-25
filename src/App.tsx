@@ -43,14 +43,14 @@ export default function App() {
               width={32}
               height={32}
               alt="Ecobridge Logo"
-              src="src/assets/ecobridge-logo.png"
+              src="public\ecobridge-logo.png"
               className={`object-contain ${isScrolled ? "opacity-100" : "hidden"}`}
             />
             <Image
               width={32}
               height={32}
               alt="Ecobridge Logo White"
-              src="src/assets/ecobridge-logo.png"
+              src="public\ecobridge-logo.png"
               className={`object-contain brightness-0 invert ${isScrolled ? "hidden" : "opacity-100"}`}
             />
           </div>

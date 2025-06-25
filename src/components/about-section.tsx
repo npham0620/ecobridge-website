@@ -97,7 +97,7 @@ export const AboutSection: React.FC = () => {
                 removeWrapper
                 alt="Ecobridge team working together"
                 className="w-full h-full object-cover"
-                src="src\assets\terraces.jpg"
+                src="public\terraces.jpg"
               />
             </CardBody>
           </Card>
