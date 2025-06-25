@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardBody, Input, Textarea, Button, Divider } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { Form } from "react-router-dom";
 
 export const ContactSection: React.FC = () => {
   const [formState, setFormState] = React.useState({
@@ -24,19 +25,45 @@ export const ContactSection: React.FC = () => {
     setIsSubmitting(true);
     
     // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormState({
-        name: "",
-        email: "",
-        message: ""
+    setTimeout(async () => {
+      const formData = new FormData();
+      formData.append("access_key","4ee62c75-eba7-4289-a8d0-42a49d8dbcc2");
+      formData.append("name", formState.name);
+      formData.append("email", formState.email);
+      formData.append("message", formState.message);
+      formData.append("subject", "New Message from Website");
+      formData.append("from_name", "Website Contact Form");
+
+      try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
-      
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormState({
+          name: "",
+          email: "",
+          message: ""
+        });
+
       // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        alert("Submission failed. Please try again.");
+        console.error(result);
+      }
+      } catch (error) {
+        alert("An error occurred while submitting the form. Please try again.");
+        console.error("Error submitting form:", error);
+      } finally {
+        setIsSubmitting(false);
+      }
     }, 1500);
   };
 
