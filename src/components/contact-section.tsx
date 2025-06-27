@@ -68,11 +68,11 @@ export const ContactSection: React.FC = () => {
   };
 
   const contactInfo = [
-    // {
-    //   icon: "lucide:map-pin",
-    //   title: "Address",
-    //   details: "123 Some Street, Some City, VN 12456"
-    // },
+    {
+      icon: "lucide:map-pin",
+      title: "Address",
+      details: "SCA 04.16 Sunrise Cityview, 33 Nguyen Huu Tho, Tan Hung Ward, District 7, Ho Chi Minh City, Vietnam"
+    },
     {
       icon: "lucide:phone",
       title: "Phone",
