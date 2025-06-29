@@ -42,7 +42,7 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl">
-                Ecobridge was formed with the sole mission to help Vietnam economy grow sustainably, 
+                Ecobridge was formed with the sole mission to help Vietnam's economy grow sustainably, 
                 and we aim to achieve it by connecting providers of sustainable solutions to companies 
                 with the ability to make a difference.
               </p>
